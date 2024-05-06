@@ -1,6 +1,7 @@
 FROM ubuntu:latest
-RUN dnf -y install git \
-    dnf -y --enablerepo=crb install gcc make pkgconfig autoconf automake python3-docutils libseccomp-devel jansson-devel libyaml-devel libxml2-devel \
+RUN apt -y update \
+    apt -y install git \
+    apt -y install gcc make pkg-config autoconf automake python3-docutils libseccomp-dev libjansson-dev libyaml-dev libxml2-dev \
     git clone https://github.com/universal-ctags/ctags.git \
     cd ctags \
     ./autogen.sh \
